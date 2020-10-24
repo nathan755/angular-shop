@@ -10,7 +10,8 @@ export class ElectronicsComponent implements OnInit {
   constructor(private dataService: DataFetchService) { }
 
   ngOnInit(): void {
-    this.dataService.fetchShopData().subscribe((res)=>console.log("res", res))
+    
+    this.dataService.fetchShopData("electronics").subscribe((res)=>console.log("res", res))
   }
 
 }
