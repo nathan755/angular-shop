@@ -11,6 +11,9 @@
     li {
         line-height: 50px;
         cursor: pointer;
+        &:focus{
+            outline: 0;
+        }
         height: 100%;
         margin: 18px;
         padding-left: 6px;
