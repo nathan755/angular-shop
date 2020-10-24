@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+li {
+    list-style: none;
+    
+}
+.clear {
+    clear: both;
+   
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+$grey:#eeeeee;
+$black:#191919;
+$orange:#f95501;
