@@ -1,17 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ShopData } from "./models"
 
-interface Product {
-	id: number,
-	title: string,
-	price: number,
-	description: string,
-	category: string,
-	image: string
-};
-
-interface Response extends Array<Product>{};
 
 
 @Injectable({
@@ -23,12 +14,12 @@ export class DataFetchService {
 
 	constructor(private request: HttpClient) { }
 
-	public fetchShopData(category?: string):Observable<Response> {
+	public fetchShopData(category?: string):Observable<ShopData> {
 		if(category !== undefined){
-			return this.request.get<Response>(this.baseUrl+category);
+			return this.request.get<ShopData>(`${this.baseUrl}/category/${category}`);
 		}
 		else{
-			return this.request.get<Response>(this.baseUrl);
+			return this.request.get<ShopData>(this.baseUrl);
 		}
 		
 	}

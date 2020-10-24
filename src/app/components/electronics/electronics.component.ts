@@ -1,17 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { DataFetchService } from "../../services/data-fetch.service";
+import { ShopData } from "../../services/models";
 @Component({
-  selector: 'app-electronics',
-  templateUrl: './electronics.component.html',
-  styleUrls: ['./electronics.component.scss']
+	selector: 'app-electronics',
+	templateUrl: './electronics.component.html',
+	styleUrls: ['./electronics.component.scss']
 })
 export class ElectronicsComponent implements OnInit {
 
-  constructor(private dataService: DataFetchService) { }
+	constructor(private dataService: DataFetchService) { }
 
-  ngOnInit(): void {
-    
-    this.dataService.fetchShopData("electronics").subscribe((res)=>console.log("res", res))
-  }
+	products:ShopData;
+	
+	ngOnInit(): void {
+		this.dataService.fetchShopData("electronics").subscribe((res) => this.products = res);
+	}
 
 }

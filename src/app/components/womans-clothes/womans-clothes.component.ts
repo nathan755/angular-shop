@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { DataFetchService } from "../../services/data-fetch.service";
+import { ShopData } from "../../services/models";
 @Component({
   selector: 'app-womans-clothes',
   templateUrl: './womans-clothes.component.html',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WomansClothesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: DataFetchService) { }
+
+  products:ShopData;
 
   ngOnInit(): void {
+    this.dataService.fetchShopData("women clothing").subscribe((res) => this.products = res);
   }
 
 }
