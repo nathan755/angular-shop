@@ -1,0 +1,28 @@
+@import "../../../styles.scss";
+.shop-item {
+    height: 300px;
+    width: 225px;
+    margin: 18px;
+    display: inline-block;
+    text-align: center;
+    img {
+        margin: 6px auto;
+        height: 33%;
+        display: block;
+    }
+    button{
+        background-color: $orange;
+        color: white;
+        height:40px;
+        border-radius: 6px;
+        border: none;
+        padding: 12px;
+        cursor: pointer;
+        &:focus{
+            outline: none;
+        }
+        &:active{
+            background-color: darken($orange, 5%);
+        }
+    }
+}

@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+$grey:#eeeeee;
+$black:#191919;
+$orange:#f95501;
 li {
     list-style: none;
     
@@ -14,6 +17,8 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-$grey:#eeeeee;
-$black:#191919;
-$orange:#f95501;
+@mixin box-shadow {
+    box-shadow: 1px 1px 2px $black;
+}
+
+
